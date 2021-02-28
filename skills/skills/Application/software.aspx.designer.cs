@@ -40,13 +40,40 @@ namespace skills.Application {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Select1 control.
+        /// Fullname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect Select1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Fullname;
+        
+        /// <summary>
+        /// Age control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Age;
+        
+        /// <summary>
+        /// coursetype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect coursetype;
+        
+        /// <summary>
+        /// Schoolname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Schoolname;
         
         /// <summary>
         /// Gender control.
@@ -56,6 +83,15 @@ namespace skills.Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect Gender;
+        
+        /// <summary>
+        /// enterdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl enterdate;
         
         /// <summary>
         /// FileUpload1 control.

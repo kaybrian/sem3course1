@@ -60,6 +60,7 @@
     <Content Include="about.aspx" />
     <Content Include="Application\profile.aspx" />
     <Content Include="Application\software.aspx" />
+    <Content Include="Application\success.aspx" />
     <Content Include="assets\css\style-starter.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\images\banner.png" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Application\software.aspx.designer.cs">
       <DependentUpon>software.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\success.aspx.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\success.aspx.designer.cs">
+      <DependentUpon>success.aspx</DependentUpon>
     </Compile>
     <Compile Include="landingsite\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

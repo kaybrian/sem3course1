@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="software.aspx.cs" Inherits="skills.Application.software" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="success.aspx.cs" Inherits="skills.Application.success" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-                <!-- Required meta tags -->
+                    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Skill - Student Application Software</title>
+    <title>Skill - Student Application Successful</title>
 
     <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-       <header class="w3l-header">
+     <header class="w3l-header">
 	<div class="hero-header-11">
 		<div class="hero-header-11-content">
 			<div class="container">
@@ -60,9 +60,8 @@
 		</div>
 	</div>
 </header>
-<!-- //header -->
 
-        <!-- breadcrum -->
+         <!-- breadcrum -->
             <section class="w3l-skill-breadcrum">
               <div class="breadcrum">
                 <div class="container">
@@ -72,80 +71,49 @@
             </section>
             <!-- //breadcrum -->
 
-        <section class="w3l-get-started">
+             <section class="w3l-get-started">
   <div class="new-block top-bottom">
     <div class="container">
       <div class="middle-section">
         <div class="section-width">
-          <h2>Start your Amazing Software journey with us today. </h2>
+          <h2>Application has been successful . </h2>
         </div>
         <div class="link-list-menu">
-            <p class="mb-5">All you have to do is complete the application forms today</p>
-            <a href="#" class="btn btn-outline-light btn-more">Ready, lets go</a>
+            <p class="mb-5">Hey thanks for completing your application. </p>
+            <a href="#" class="btn btn-outline-light btn-more">Excited ? </a>
         </div>
       </div>
     </div>
   </div>
   </section>
+        <section class="w3l-subscribe">
+  <div class="subscription-infhny">
+    <div class="container-fluid">
+      <div class="subscription-grids row">
+        <div class="subscription-right form-right-inf col-lg-6 p-md-5 p-4">
+          <div class="px-lg-5 py-md-0 py-3">
+            <div class="header-section">
+              <h3>Our Team is working hard <span>to review your application.</span></h3>
+              <p class="mt-3">In the mean time. Please keep this application id safe</p>
+            </div>
+            <form action="#" method="post" class="signin-form mt-lg-5 mt-4">
+              <div class="forms-gds">
+                <div class="form-input">
+                  <input type="email" name="" placeholder="Your email here" required="">
+                </div>
+                <div class="form-input"><button class="btn btn-primary theme-button">Subscribe</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="subscription-left forms-25-info col-lg-6 ">
 
-         <section class="w3l-quote py-5">
-    <div class="container py-lg-3">
-      <h3>Please Fill the rightful content </h3>
-      <p>Start your Application now </p>
+        </div>
+      </div>
     </div>
-  </section>
-        <!-- contact form -->
-<section class="w3l-contacts-12" id="contact">
-	<div class="container py-5">
-		<div class="contacts12-main py-md-3">
-			<div class="header-section text-center">
-				<h3 class="mb-md-5 mb-4">Fill out the form.
-			</div>
-			<div>
-				<div class="main-input">
-                    <label for="w3lName">Enter your Full Names:</label>
-					<input id="Fullname" type="text" runat="server" name="w3lName" placeholder="Enter your full name" class="contact-input" required="" /><br />
-                    <label for="age">Enter your Age:</label>
-                     <input id="Age" type="text" runat="server" name="age" placeholder=" enter your age eg.21" class="contact-input" required="" /><br />
-                     <label for="coursetype">Select your Prefered course type:</label>
-                    <select id="coursetype" name="coursetype" class="contact-input" runat="server">
-                        <option value="HDSE" selected="selected"> Higher Diploma in software Engineering </option>
-                        <option value="ADSE"> Advanced Diploma in software Engineering  </option>
-                    </select><br /><br />
-                   <label for="Schoolname">Enter your Former school name:</label>
-                    <input id="Schoolname" type="text" runat="server" name="Schoolname" placeholder="Enter your Former school name " class="contact-input" required="" /><br />
-                    <label for="Gender">Select your Gender:</label>
-                    <select id="Gender" name="Gender" class="contact-input" runat="server">
-                        <option value="Male" selected="selected"> Male </option>
-                        <option value="Female"> Female </option>
-                    </select><br /><br />
-                    <label for="Date">When do you plan on starting school:</label>
-                    <input id="enterdate" type="date" runat="server" name="Date" placeholder="When do you want to start school" class="contact-input" required="" /><br />
-                    <label for="Olevelships">Upload your O level ships:</label>
-                    <asp:FileUpload ID="FileUpload1" runat="server" name="Olevelships" class="contact-input" required=""  /><br />
-                    <label for="alevelships">Upload your A level ships:</label>
-                    <asp:FileUpload ID="FileUpload2" runat="server" name="alevelships" class="contact-input" required=""  /><br />
-                    <label for="profile">Upload your profile pic:</label>
-                    <asp:FileUpload ID="FileUpload3" runat="server" name="profile" class="contact-input"  /><br />
-                    <label for="Identitycard">Upload your Identity card:</label>
-                    <asp:FileUpload ID="FileUpload4" runat="server" name="Identitycard" class="contact-input" required=""  />
-				</div>
-				<div class="text-right">
-                    <asp:Button ID="Button2" class="btn-secondary btn theme-button" runat="server" Text="Apply Now" OnClick="Button2_Click" />
-				</div>
-			</div>
-		</div>
-	</div>
 </section>
-<!-- //contact form -->
 
-
-
-
-
-
-
-        <!-- footer -->
+         <!-- footer -->
    <footer class="w3l-footer-29-main" id="footer">
      <div class="footer-29 py-5">
        <div class="container pb-lg-3">
@@ -205,9 +173,7 @@
              <a href="#instagram" class="instagram"><span class="fa fa-instagram" aria-hidden="true"></span></a>
              <a href="#youtube" class="youtube"><span class="fa fa-youtube" aria-hidden="true"></span></a>
            </div>
-           <div class="copyright mt-1">
-             <p>&copy; 2020 Skill. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3Layouts</a></p>
-           </div>
+
          </div>
        </div>
      </div>
@@ -339,6 +305,7 @@
        });
    </script>
    <!-- disable body scroll which navbar is in active -->
+
 
     </form>
 </body>
