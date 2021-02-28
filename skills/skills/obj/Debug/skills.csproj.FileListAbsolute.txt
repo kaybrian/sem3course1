@@ -1,0 +1,6 @@
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\bin\skills.dll.config
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\bin\skills.dll
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\bin\skills.pdb
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\obj\Debug\skills.csprojResolveAssemblyReference.cache
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\obj\Debug\skills.dll
+C:\Users\kagoda rogers\OneDrive\Desktop\New folder\skills\skills\obj\Debug\skills.pdb
