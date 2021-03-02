@@ -40,15 +40,7 @@
 							<li class="nav-item @@home-active">
 								<a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
 							</li>
-							<li class="nav-item @@about-active">
-								<a class="nav-link" href="#">About</a>
-							</li>
-							<li class="nav-item @@services-active">
-								<a class="nav-link" href="#">Services</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="#">Contact</a>
-							</li>
+							
                             <li class="nav-item active">
                                 <asp:Button ID="Button1" CssClass="nav-link" runat="server" Text="Logout" OnClick="Button1_Click" />
 							</li>

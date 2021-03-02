@@ -38,17 +38,9 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item @@home-active">
-								<a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="profile.aspx">Profile <span class="sr-only">(current)</span></a>
 							</li>
-							<li class="nav-item @@about-active">
-								<a class="nav-link" href="#">About</a>
-							</li>
-							<li class="nav-item @@services-active">
-								<a class="nav-link" href="#">Services</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="#">Contact</a>
-							</li>
+							
                             <li class="nav-item active">
                                 <asp:Button ID="Button1" CssClass="nav-link" runat="server" Text="Logout" OnClick="Button1_Click" />
 							</li>
@@ -145,7 +137,7 @@
                   <li>Minimum of <span>O</span> level with <span>3</span> credits.</li>
                   <li>Minimum of <span> A </span> level with <span>1 </span> Principal pass and 2 subsidaries or its equivalent are required for students interested in taking up HDIM </li>
                 </ul>
-                <a href="services.html" class="btn btn-primary theme-button mt-4">Apply Now</a>
+                <a href="muitmedia.aspx" class="btn btn-primary theme-button mt-4">Apply Now</a>
               </div>
             </div>
           </div>

@@ -24,34 +24,26 @@ namespace skills.Application
 
                 if (User.Identity.IsAuthenticated)
                 {
-                    
 
-                   //SqlParameter outPutParameter = new SqlParameter();
-                  // outPutParameter.ParameterName = "@Name";
-                   //outPutParameter.SqlDbType = System.Data.SqlDbType.Int;
-                   //outPutParameter.Direction = System.Data.ParameterDirection.Output;
-                   //cmd.Parameters.Add(outPutParameter);
-                    
-                    SqlParameter parm = new SqlParameter("@username ", SqlDbType.VarChar);
-                    parm.Direction = ParameterDirection.ReturnValue;
+                    if(appiledstudent(User.Identity.Name)){
+                        FormsAuthentication.RedirectFromLoginPage(User.Identity.Name, false);
+                        Response.Redirect("../Application/success.aspx");
+                    }
+                    else{
+                      SqlParameter parm = new SqlParameter("@username ", SqlDbType.VarChar);
+                        parm.Direction = ParameterDirection.ReturnValue;
 
+                        cmd.Parameters.Add(parm);
+                        cmd.Parameters.AddWithValue("@Email", User.Identity.Name);
 
-                    cmd.Parameters.Add(parm);
-                    cmd.Parameters.AddWithValue("@Email", User.Identity.Name);
-
-
-                    con.Open();
-
-
-                    Label1.Text = User.Identity.Name;
-
+                        con.Open();
+                        Label1.Text = User.Identity.Name;
+                    }
+                  
 
                 }
-                
-
 
             }
-
 
 
         }
@@ -62,6 +54,23 @@ namespace skills.Application
             Request.Cookies.Clear();
             FormsAuthentication.SignOut();
             Response.Redirect("~/index.aspx", true);
+        }
+        private bool appiledstudent(string email)
+        {
+            string s = "data source= BRIAN;database=skills;user id=sa;password=sap";
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("seeifstdnapplied", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramEmail = new SqlParameter("@Email", email);
+
+                cmd.Parameters.Add(paramEmail);
+
+                con.Open();
+                int ReturnCode = (int)cmd.ExecuteScalar();
+                return ReturnCode == 1;
+            }
         }
    
     }

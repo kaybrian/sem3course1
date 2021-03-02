@@ -38,16 +38,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item @@home-active">
-								<a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item @@about-active">
-								<a class="nav-link" href="#">About</a>
-							</li>
-							<li class="nav-item @@services-active">
-								<a class="nav-link" href="#">Services</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="#">Contact</a>
+								<a class="nav-link" href="profile.aspx">Profile <span class="sr-only">(current)</span></a>
 							</li>
                             <li class="nav-item active">
                                 <asp:Button ID="Button1" CssClass="nav-link" runat="server" Text="Logout" OnClick="Button1_Click" />
@@ -96,14 +87,12 @@
               <h3>Our Team is working hard <span>to review your application.</span></h3>
               <p class="mt-3">In the mean time. Please keep this application id safe</p>
             </div>
-            <form action="#" method="post" class="signin-form mt-lg-5 mt-4">
+            <div class="signin-form mt-lg-5 mt-4">
               <div class="forms-gds">
-                <div class="form-input">
-                  <input type="email" name="" placeholder="Your email here" required="">
-                </div>
-                <div class="form-input"><button class="btn btn-primary theme-button">Subscribe</button></div>
+                
+                <div class="form-input"><p class="btn btn-primary theme-button">Application ID:<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p></div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div class="subscription-left forms-25-info col-lg-6 ">

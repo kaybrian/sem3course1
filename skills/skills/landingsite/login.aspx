@@ -83,7 +83,7 @@
 					<input id="Text1" runat="server" type="email" name="w3lSender" placeholder="Enter your mail" class="contact-input" required="" />
 					<input id="Password" runat="server" type="password" name="w3lSubject" placeholder="Password" class="contact-input" />
 				</div>
-                <div class="main-input d-block rounded mb-1 mt-1">
+                <div class="main-input d-block bg-danger rounded mb-1 mt-1">
                     <asp:Label ID="Label1" CssClass="text-white" runat="server" Text=""></asp:Label>
 
                 </div>

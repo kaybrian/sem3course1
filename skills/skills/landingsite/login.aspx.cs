@@ -21,7 +21,16 @@ namespace skills.landingsite
         {
             if (AuthenicateUser(Text1.Value.ToString(), Password.Value.ToString()))
             {
-                FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                if (appiledstudent(Text1.Value.ToString()))
+                {
+                    FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                    Response.Redirect("../Application/success.aspx");
+                }
+                else
+                {
+                   FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                }
+                
             }else{
                 Label1.Text = "Please Use the right Password/Email";
             }
@@ -46,7 +55,23 @@ namespace skills.landingsite
                 con.Open();
                 int ReturnCode = (int)cmd.ExecuteScalar();
                 return ReturnCode == 1;
+            }
+        }
+        private bool appiledstudent(string email)
+        {
+            string s = "data source= BRIAN;database=skills;user id=sa;password=sap";
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("seeifstdnapplied", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter paramEmail = new SqlParameter("@Email", email);
+
+                cmd.Parameters.Add(paramEmail);
+
+                con.Open();
+                int ReturnCode = (int)cmd.ExecuteScalar();
+                return ReturnCode == 1;
             }
         }
     }
