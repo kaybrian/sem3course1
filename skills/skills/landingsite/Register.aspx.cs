@@ -45,7 +45,7 @@ namespace skills.landingsite.assets
                 }
                 else
                 {
-                    Response.Redirect("~/login.aspx");
+                    Response.Redirect("/landingsite/login.aspx");
                 }
 
             }

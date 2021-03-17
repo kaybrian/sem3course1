@@ -42,7 +42,7 @@
 							</li>
 							
                             <li class="nav-item active">
-                                <asp:Button ID="Button1" CssClass="nav-link" runat="server" Text="Logout" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" CssClass="btn btn-sm btn-outline-info" runat="server" Text="Logout" OnClick="Button1_Click" />
 							</li>
                            
 						</ul>

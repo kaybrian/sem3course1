@@ -51,7 +51,10 @@
 								<a class="nav-link" href="../contact.aspx">Contact</a>
 							</li>
                             <li class="nav-item active">
-								<a class="nav-link" href="login.aspx">Login</a>
+								<a class="btn btn-sm btn-outline-info" href="login.aspx">Login</a>
+							</li>
+                            <li class="nav-item @@contact-active">
+								<a class="btn btn-sm btn-outline-info" href="landingsite/adminlogin.aspx">Admin</a>
 							</li>
 						</ul>
 					</div>
@@ -85,7 +88,7 @@
                     <asp:TextBox ID="txtPassword" class="contact-input" placeholder="Password" TextMode="Password" runat="server"></asp:TextBox>
                     <asp:TextBox ID="txtConfirmPassword" placeholder="Confirm Password" class="contact-input" TextMode="Password" runat="server"></asp:TextBox>
 				</div>
-                <div class="main-input rounded mb-1 mt-1 bg-danger">
+                <div class="main-input text-white rounded mb-1 mt-1 bg-danger">
                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 </div> 
 				<div class="text-right">

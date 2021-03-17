@@ -42,7 +42,7 @@
 							</li>
 							
                             <li class="nav-item active">
-                                <asp:Button ID="Button1" CssClass="nav-link" runat="server" Text="Logout" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" CssClass="nav-link btn btn-sm btn-outline-info" runat="server" Text="Logout" OnClick="Button1_Click" />
 							</li>
                            
 						</ul>
@@ -105,7 +105,7 @@
                   <li>Minimum of <span>O</span> level with <span>3</span> credits.</li>
                   <li>Minimum of <span> A </span> level with <span>1 </span> Principal pass and 2 subsidaries or its equivalent are required for students interested in taking up HDNCS and HDHN </li>
                 </ul>
-                <a href="services.html" class="btn btn-primary theme-button mt-4">Apply Now</a>
+                <a href="cyber.aspx" class="btn btn-primary theme-button mt-4">Apply Now</a>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
                   <li>Minimum of <span>O</span> level with <span>3</span> credits.</li>
                   <li>Minimum of <span> A </span> level with <span>1 </span> Principal pass and 2 subsidaries or its equivalent are required for students interested in taking up HDS </li>
                 </ul>
-                <a href="services.html" class="btn btn-primary theme-button mt-4">Apply Now</a>
+                <a href="datascience.aspx" class="btn btn-primary theme-button mt-4">Apply Now</a>
               </div>
             </div>
           </div>

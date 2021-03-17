@@ -51,7 +51,10 @@
 								<a class="nav-link" href="contact.aspx">Contact</a>
 							</li>
                             <li class="nav-item @@contact-active">
-								<a class="nav-link" href="landingsite/login.aspx">Login</a>
+								<a class="btn btn-sm btn-outline-info" href="landingsite/login.aspx">Login</a>
+							</li>
+                            <li class="nav-item @@contact-active">
+								<a class="btn btn-sm btn-outline-info" href="landingsite/adminlogin.aspx">Admin</a>
 							</li>
 						</ul>
 					</div>

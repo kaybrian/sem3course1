@@ -14,38 +14,17 @@ namespace skills.Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string s = "data source= BRIAN;database=skills;user id=sa;password=sap";
-            using (SqlConnection con = new SqlConnection(s))
+
+            if (User.Identity.IsAuthenticated)
             {
-                //Create the SqlCommand object
-                SqlCommand cmd = new SqlCommand("getloginedusers", con);
-                //Specify that the SqlCommand is a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                if (User.Identity.IsAuthenticated)
-                {
-
-                    if(appiledstudent(User.Identity.Name)){
-                        FormsAuthentication.RedirectFromLoginPage(User.Identity.Name, false);
-                        Response.Redirect("../Application/success.aspx");
-                    }
-                    else{
-                      SqlParameter parm = new SqlParameter("@username ", SqlDbType.VarChar);
-                        parm.Direction = ParameterDirection.ReturnValue;
-
-                        cmd.Parameters.Add(parm);
-                        cmd.Parameters.AddWithValue("@Email", User.Identity.Name);
-
-                        con.Open();
-                        Label1.Text = User.Identity.Name;
-                    }
-                  
-
+                string email = User.Identity.Name;
+                if (appiledstudent(email)){
+                    Response.Redirect("success.aspx");
                 }
-
+                else{
+                    Label1.Text = User.Identity.Name;
+                }                
             }
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -72,6 +51,7 @@ namespace skills.Application
                 return ReturnCode == 1;
             }
         }
+
    
     }
 }

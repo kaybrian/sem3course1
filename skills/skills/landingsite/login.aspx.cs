@@ -23,12 +23,21 @@ namespace skills.landingsite
             {
                 if (appiledstudent(Text1.Value.ToString()))
                 {
-                    FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
-                    Response.Redirect("../Application/success.aspx");
+                    if (approvedstdnt(Text1.Value.ToString()))
+                    {
+                        FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                        Response.Redirect("../Application/success.aspx");
+                    }
+                    else
+                    {
+                        FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                        Response.Redirect("../school/index.aspx");
+                    }
+                    
                 }
                 else
                 {
-                   FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
+                    FormsAuthentication.RedirectFromLoginPage(Text1.Value.ToString(), false);
                 }
                 
             }else{
@@ -44,6 +53,7 @@ namespace skills.landingsite
             {
                 SqlCommand cmd = new SqlCommand("studentLogin", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 string hashedpasswaor = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
 
                 SqlParameter paramEmail = new SqlParameter("@Email", email);
@@ -72,6 +82,24 @@ namespace skills.landingsite
                 con.Open();
                 int ReturnCode = (int)cmd.ExecuteScalar();
                 return ReturnCode == 1;
+            }
+        }
+
+        private bool approvedstdnt(string email)
+        {
+            string s = "data source= BRIAN;database=skills;user id=sa;password=sap";
+            using (SqlConnection con = new SqlConnection(s))
+            {
+                SqlCommand cmd = new SqlCommand("seeifstdnapproved", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramEmail = new SqlParameter("@Email", email);
+
+                cmd.Parameters.Add(paramEmail);
+
+                con.Open();
+                int ReturnCode = (int)cmd.ExecuteScalar();
+                return ReturnCode == -1;
             }
         }
     }

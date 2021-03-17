@@ -6,22 +6,20 @@ drop database skills;
 
 create table studentRegister
 (
-[Name] nvarchar(100),
-[Email] nvarchar(100) primary key,
-[Password] nvarchar(100)
+[Name] varchar(100),
+[Email] varchar(100) primary key,
+[Password] varchar(100)
 )
+
+
 select * from studentRegister;
-
-ALTER TABLE studentRegister
-ALTER COLUMN  Email primary key;
-
 delete  from studentRegister
 
 
 CREATE PROCEDURE spstudentRegister
-@Name nvarchar(100),
-@Email nvarchar(100),
-@Password nvarchar(100)
+@Name varchar(100),
+@Email varchar(100),
+@Password varchar(100)
 as 
 Begin
 	Declare @Count int 
@@ -84,11 +82,14 @@ BEGIN
 	return @namme
 End
 
+drop table CoursesApplication;
+select * from CoursesApplication;
 
 create table CoursesApplication
 (
 application_id int IDENTITY(1,1) PRIMARY KEY,
-Email nvarchar(100) FOREIGN KEY  REFERENCES studentRegister(Email),
+Approved BIT default 'FALSE',
+Email varchar(100) FOREIGN KEY  REFERENCES studentRegister(Email),
 Fullnames nvarchar(100) not null,
 Age nvarchar(100) not null,
 Highschool nvarchar(100) not null,
@@ -116,7 +117,7 @@ delete from CoursesApplication;
 
 create procedure applycourse
 (
-@Email nvarchar(100),@Fullnames nvarchar(100),
+@Email varchar(100),@Fullnames nvarchar(100),
 @Age nvarchar(100),@Highschool nvarchar(100),
 @Gender nvarchar(20),@Course nvarchar(100),
 @Coursetype nvarchar(100),@admisionyear Date,
@@ -146,14 +147,133 @@ Begin
 	from CoursesApplication where Email = @Email
 End
 
-
-CREATE PROCEDURE appliedstudents
+drop proc seeifstdnapplied;
+CREATE PROCEDURE seeifstdnapplied
 @Email nvarchar(100)
 as 
 Begin 
 	Declare @Count int 
 
 	select @Count = COUNT(Email) from CoursesApplication
+	where (Email) = @Email
+
+	if (@Count = 1)
+	Begin
+		select 1 as ReturnCode 
+	End 
+	Begin
+		select -1 as ReturnCode 
+	End
+End
+
+
+/* this is going to be the admin app setting */
+create table Admin
+(
+[Name] varchar(100),
+[Role] varchar(10),
+[Email] varchar(100) primary key,
+[Password] varchar(100)
+)
+CREATE PROCEDURE spaddadmin
+@Name varchar(100),
+@Role varchar(100),
+@Email varchar(100),
+@Password varchar(100)
+as 
+Begin
+	Declare @Count int 
+	Declare @ReturnCode int 
+	
+	select @Count = COUNT(Email) 
+	from studentRegister where Email = @Email
+	if @Count > 0
+	Begin 
+		set @ReturnCode = -1
+	End
+	Else
+	Begin
+		set @ReturnCode = 1
+		insert into Admin values 
+		(@Name,@Role,@Email,@Password)
+	End
+	select @ReturnCode as ReturnCode
+End
+
+insert into Admin values('aptechadmin','admin','admin@admin.com','admin1234')
+select * from Admin
+drop table admin;
+
+CREATE PROCEDURE adminlogins
+@Email nvarchar(100),
+@Password nvarchar(100)
+as 
+Begin 
+	Declare @Count int 
+
+	select @Count = COUNT(Email) from Admin
+	where (Email) = @Email and (Password)= @Password
+
+	if (@Count  =1)
+	Begin
+		select 1 as ReturnCode 
+	End 
+	Begin
+		select -1 as ReturnCode 
+	End
+End
+
+
+CREATE PROCEDURE cntapplies
+@count int out 
+as
+begin 
+	select @count = (select count(*) from CoursesApplication where Approved = 'FALSE')
+end
+
+
+CREATE PROCEDURE aprovedstudents
+@count int out 
+as
+begin 
+	select @count = (select count(*) from CoursesApplication where Approved = 'True')
+end
+
+
+CREATE PROCEDURE cntadmins
+@count int out 
+as
+begin 
+	select @count = (select count(*) from Admin)
+end
+
+
+/* i am creating the student table */
+CREATE TABLE AdmitedStudetns
+(
+     ID INTEGER IDENTITY(1,1) NOT NULL primary key,
+	 student_roll as 'Cp' + right( '0000' +cast(ID as varchar(20)),20),
+	  Name varchar(100) not null,
+	 email varchar(100) not null,
+	 age varchar(100) not null,
+	 gender varchar(100) not null,
+	 course varchar(100) not null,
+	 course_type varchar(100) not null,
+	 year_joined datetime DEFAULT(getdate())
+)
+
+drop table AdmitedStudetns
+select * from AdmitedStudetns
+delete from AdmitedStudetns
+
+
+CREATE PROCEDURE seeifstdnapproved
+@Email nvarchar(100)
+as 
+Begin 
+	Declare @Count int 
+
+	select @Count = COUNT(Email) from AdmitedStudetns
 	where (Email) = @Email
 
 	if (@Count  =1)
@@ -164,3 +284,5 @@ Begin
 		select -1 as ReturnCode 
 	End
 End
+
+drop proc seeifstdnapproved;
