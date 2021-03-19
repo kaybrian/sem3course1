@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="muitmedia.aspx.cs" Inherits="skills.Application.muitmedia" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="muitmedia.aspx.cs" Inherits="skills.Application.muitmedia" %>
 
 <!DOCTYPE html>
 

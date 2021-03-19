@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admited.aspx.cs" Inherits="skills.Admited" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admited.aspx.cs" Inherits="skills.Admited" %>
 
 <!DOCTYPE html>
 

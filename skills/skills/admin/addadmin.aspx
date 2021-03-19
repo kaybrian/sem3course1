@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addadmin.aspx.cs" Inherits="skills.admin.addadmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addadmin.aspx.cs" Inherits="skills.admin.addadmin" %>
 
 <!DOCTYPE html>
 
@@ -90,7 +90,7 @@
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><asp:Button class="fa fa-key" ID="Button1" runat="server" Text="Log out" OnClientClick="logoutuser" /></li>
+                <li><asp:Button CssClass="fa fa-key" ID="Button1" runat="server" Text="Log out" OnClientClick="logoutuser" /></li>
              </ul>
         </li>
         <!-- user login dropdown end -->
@@ -180,7 +180,6 @@
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
-                                <div role="form">
                                 <div class="form-group">
                                     <label for="adminname">Add Name</label>
                                     <input runat="server" type="text" class="form-control" id="adminname" placeholder="Enter email">
@@ -189,7 +188,6 @@
                                     <label for="exampleInputEmail1">Add Email</label>
                                     <input runat="server" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                                 </div>
-                                    </div>
                                     <div class="form-group">
                                     <label for="exampleInputEmail1">Add Role </label>
                                     <select id="Gender" name="Gender" class="contact-input" runat="server">
@@ -204,17 +202,18 @@
                                     <input runat="server" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                 </div>
                                 <asp:Label ID="Label1" CssClass="text-white bg-danger" runat="server" Text=""></asp:Label>
-                                <asp:Button ID="Button2" class="btn btn-info" runat="server" Text="Add User" OnClick="Button2_Click" />
+                                <asp:Button ID="Button2" CssClass="btn btn-info" runat="server" Text="Add User" OnClick="Button2_Click" />
                             </div>
                             </div>
 
-                        </div>
                     </section>
 
             </div> 
         </div>
         <!-- page end-->
         </div>
+        </section>
+    </section>
 
 <!--main content end-->
     </form>

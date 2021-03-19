@@ -70,6 +70,7 @@
     <Content Include="admin\css\morris.css" />
     <Content Include="admin\css\style-responsive.css" />
     <Content Include="admin\css\style.css" />
+    <Content Include="admin\exams.aspx" />
     <Content Include="admin\fonts\fontawesome-webfont.svg" />
     <Content Include="admin\images\1.png" />
     <Content Include="admin\images\2.png" />
@@ -157,6 +158,9 @@
     <Content Include="contact.aspx" />
     <Content Include="index.aspx" />
     <Content Include="landingsite\login.aspx" />
+    <Content Include="online\Default.aspx" />
+    <Content Include="online\Default2.aspx" />
+    <Content Include="online\Online Test Application.sln" />
     <Content Include="school\index.aspx" />
     <Content Include="services.aspx" />
     <Content Include="Web.config">
@@ -184,6 +188,13 @@
     </Compile>
     <Compile Include="admin\applications.aspx.designer.cs">
       <DependentUpon>applications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\exams.aspx.cs">
+      <DependentUpon>exams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\exams.aspx.designer.cs">
+      <DependentUpon>exams.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -297,6 +308,14 @@
     <Compile Include="landingsite\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="online\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="online\Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="school\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,6 +351,12 @@
     <Content Include="school\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="online\.vs\Online Test Application\v14\.suo" />
+    <Content Include="online\Online Test Application.v12.suo" />
+    <Content Include="online\Web.config" />
+    <None Include="online\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

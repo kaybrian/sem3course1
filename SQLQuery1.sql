@@ -286,3 +286,29 @@ Begin
 End
 
 drop proc seeifstdnapproved;
+
+create table Exams(
+QuestionId int IDENTITY(1,1),
+Question varchar(500),
+Option1 varchar(500),
+Option2 varchar(500),
+Option3 varchar(500),
+Option4 varchar(500),
+QuestionAnswer varchar(500)
+)
+select * from Exams
+insert into Exams values('choose the software for data source','java','python','c#','javascript','python')
+
+CREATE PROCEDURE spaddexams
+@Question varchar(500),
+@Option1 varchar(500),
+@Option2 varchar(500),
+@Option3 varchar(500),
+@Option4 varchar(500),
+@QuestionAnswer varchar(500)
+as 
+Begin
+		set @ReturnCode = 1
+		insert into Exams values 
+		(@Question,@Option1,@Option2,@Option3,@Option4,@QuestionAnswer)
+End

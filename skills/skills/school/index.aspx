@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="skills.school.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="skills.school.index" %>
 
 <!DOCTYPE html>
 
@@ -45,7 +45,7 @@
 								<a class="nav-link" href="#">Library</a>
 							</li>
 							<li class="nav-item @@services-active">
-								<a class="nav-link" href="#">Exams</a>
+								<a class="nav-link" href="../online/Default.aspx" >Exams</a>
 							</li>
 							<li class="nav-item @@contact-active">
 								<a class="nav-link" href="#">Profile</a>

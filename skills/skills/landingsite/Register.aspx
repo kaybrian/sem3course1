@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="skills.landingsite.assets.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="skills.landingsite.assets.Register" %>
 
 <!DOCTYPE html>
 

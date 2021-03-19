@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="skills.admin.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="skills.admin.index" %>
 
 <!DOCTYPE html>
 
@@ -135,24 +135,12 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-envelope"></i>
-                        <span>Mail </span>
+                        <span>Exams  </span>
                     </a>
                     <ul class="sub">
-                        <li><a href="mail.html">Inbox</a></li>
-                        <li><a href="mail_compose.html">Compose Mail</a></li>
+                        <li><a href="#">Add Exams </a></li>
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="chartjs.html">Chart js</a></li>
-                        <li><a href="flot_chart.html">Flot Charts</a></li>
-                    </ul>
-                </li>
-                
                 
                 <li>
                     <a href="login.html">

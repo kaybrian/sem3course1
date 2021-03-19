@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateGridView.aspx.cs" Inherits="skills.admin.UpdateGridView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UpdateGridView.aspx.cs" Inherits="skills.admin.UpdateGridView" %>
 
 <!DOCTYPE html>
 

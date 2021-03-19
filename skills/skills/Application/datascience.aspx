@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="datascience.aspx.cs" Inherits="skills.Application.datascience" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="datascience.aspx.cs" Inherits="skills.Application.datascience" %>
 
 <!DOCTYPE html>
 

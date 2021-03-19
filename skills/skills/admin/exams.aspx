@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="viewadmin.aspx.cs" Inherits="skills.admin.viewadmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="exams.aspx.cs" Inherits="skills.admin.exams" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Admin Panel - Admin Users </title>
+    <title>Add Exams </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -28,9 +28,10 @@
         <script src="js/raphael-min.js"></script>
         <script src="js/morris.js"></script>
 </head>
+
 <body>
     <form id="form1" runat="server">
-              <!--header start-->
+                   <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
@@ -83,14 +84,14 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/2.png">
-                <span class="username">John Doe</span>
+                <span class="username">Admin</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul>
+                <li><asp:Button CssClass="fa fa-key" ID="Button1" runat="server" Text="Log out" OnClientClick="logoutuser" /></li>
+             </ul>
         </li>
         <!-- user login dropdown end -->
        
@@ -126,11 +127,10 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-tasks"></i>
-                        <span>Add Admin</span>
+                        <span>Add Admin User</span>
                     </a>
                     <ul class="sub">
                         <li><a href="addadmin.aspx">Admin</a></li>
-                        <li><a href="viewadmin.aspx">List of Admins</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -167,41 +167,58 @@
 </aside>
 <!--sidebar end-->
 
-        <!--main content start-->
-<section id="main-content">
+        <!-- form for adding the exams to the paper  -->
+        <section id="main-content">
 	<section class="wrapper">
-		<div class="table-agile-info">
- <div class="panel panel-default">
-      <div class="row">
+	<div class="form-w3layouts">
+        <!-- page start-->
+        <!-- page start-->
+        <div class="row">
             <div class="col-lg-12">
                     <section class="panel">
-                        
+                        <header class="panel-heading">
+                            Add Question to the Exams Paper
+                        </header>
                         <div class="panel-body">
-                            
-                        </div>
+                            <div class="position-center">
+                                <div class="form-group">
+                                    <label for="question">Add Question</label>
+                                    <input id="question" runat="server" type="text" class="form-control"  placeholder="Enter Question" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="option1">Option 1</label>
+                                    <input runat="server" type="text" class="form-control" id="option1" placeholder="Enter Option 1" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="option2">Option 2</label>
+                                    <input runat="server" type="text" class="form-control" id="option2" placeholder="Enter Option 2" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="option3">Option 3</label>
+                                    <input runat="server" type="text" class="form-control" id="option3" placeholder="Enter Option 3" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="option4">Option 4</label>
+                                    <input runat="server" type="text" class="form-control" id="option4" placeholder="Enter Option 4">
+                                </div>
+                                 <div class="form-group">
+                                    <label for="answer">Correct Answer</label>
+                                    <input runat="server" type="text" class="form-control" id="answer" placeholder="Enter the correct answer">
+                                </div>
+                                    
+                                <asp:Label ID="Label1" CssClass="text-white bg-danger" runat="server" Text=""></asp:Label>
+                                <asp:Button ID="Button2" CssClass="btn btn-info" runat="server" Text="Add User" OnClick="Button2_Click" />
+                            </div>
+                            </div>
+
                     </section>
 
-            </div>
+            </div> 
         </div>
-    <div class="panel-heading">
-     List of Admin User
-    </div>
-    <div>
-        <asp:GridView ID="GridView1" CssClass="table table-striped table-bordered table-hover" HeaderStyle-BackColor="#000" HeaderStyle-ForeColor="White" runat="server" AutoGenerateColumns="false" Width="1457px">  
-                <Columns>  
-                    <asp:BoundField DataField="Name" HeaderText="User Name" />  
-                    <asp:BoundField DataField="Role" HeaderText="Role" />  
-                    <asp:BoundField DataField="Email" HeaderText="Email" />  
-                 
-                </Columns>  
-            </asp:GridView>
-    </div>
-  </div>
-</div>
-</section>
-</section>
-
-<!--main content end-->
+        <!-- page end-->
+        </div>
+        </section>
+    </section>
     </form>
 </body>
 </html>
